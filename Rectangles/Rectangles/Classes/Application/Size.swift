@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct Size {
+struct Size: Hashable {
+
     let width: Float
     let height: Float
+
+    init?(width: Float, height: Float) {
+        guard width > 0, height > 0 else { return nil }
+        self.width = width
+        self.height = height
+    }
 }

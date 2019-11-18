@@ -15,8 +15,7 @@ class Viewport {
 
     // MARK: Object life cycle
 
-    init?(size: Size) {
-        guard size.width > 0, size.height > 0 else { return nil }
+    init(size: Size) {
         self.size = size
     }
 }
