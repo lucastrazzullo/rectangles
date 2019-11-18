@@ -17,7 +17,7 @@ class ViewportTests: XCTestCase {
         let delegate = TestingViewportDelegate()
         delegate.overlapExistsExpectation = overlapExistsExpectation
 
-        let viewport = ViewportBuilder.buildViewport(overlappedFrames: true)
+        let viewport = ViewportBuilder.buildViewport(overlappedRectangles: true)
         viewport.delegate = delegate
 
         wait(for: [overlapExistsExpectation], timeout: 0.1)
@@ -30,14 +30,14 @@ class ViewportTests: XCTestCase {
         let delegate = TestingViewportDelegate()
         delegate.overlapNilExpectation = overlapNilExpectation
 
-        let viewport = ViewportBuilder.buildViewport(overlappedFrames: false)
+        let viewport = ViewportBuilder.buildViewport(overlappedRectangles: false)
         viewport.delegate = delegate
 
         wait(for: [overlapNilExpectation], timeout: 0.1)
     }
 
 
-    func testOverlapEventsAfterUpdatingFrames() {
+    func testOverlapEventsAfterUpdatingRectangles() {
         let overlapExistsExpectation = expectation(description: "overlap-exists")
         overlapExistsExpectation.expectedFulfillmentCount = 2
 
@@ -53,17 +53,17 @@ class ViewportTests: XCTestCase {
         let center2 = Position(x: 10, y: 10)
         let viewport = ViewportBuilder.buildViewport(center1: center1, center2: center2, size: size)
 
-        // Will produce a nil overlap as the initial viewport has been built with no overlapped frames
+        // Will produce a nil overlap as the initial viewport has been built with no overlapped rectangles
         viewport.delegate = delegate
 
-        // Will produce an overlap by moving the frame 1 in a position that overlaps with frame 2
-        viewport.frame1?.center = Position(x: 5, y: 5)
+        // Will produce an overlap by moving the rectangle 1 in a position that overlaps with rectangle 2
+        viewport.update(center: Position(x: 5, y: 5), forRectangleWith: viewport.rectangle1Identifier)
 
-        // Will produce a nil overlap by moving the frame 2 out of a position that overlaps with frame 1
-        viewport.frame2?.center = Position(x: -10, y: -10)
+        // Will produce a nil overlap by moving the rectangle 2 out of a position that overlaps with rectangle 1
+        viewport.update(center: Position(x: -10, y: -10), forRectangleWith: viewport.rectangle2Identifier)
 
-        // Will produce an overlap by moving the frame 1 back to a position that overlaps with frame 2
-        viewport.frame1?.center = Position(x: -5, y: -5)
+        // Will produce an overlap by moving the rectangle 1 back to a position that overlaps with rectangle 2
+        viewport.update(center: Position(x: -5, y: -5), forRectangleWith: viewport.rectangle1Identifier)
 
         wait(for: [overlapNilExpectation, overlapExistsExpectation], timeout: 0.1)
     }
@@ -78,8 +78,8 @@ class TestingViewportDelegate: ViewportDelegate {
 
     // MARK: Delegate methods
 
-    func viewport(_ viewport: Viewport, didOccour overlappedFrame: Frame?) {
-        if overlappedFrame != nil {
+    func viewport(_ viewport: Viewport, didUpdate overlappedRectangle: Rectangle?) {
+        if overlappedRectangle != nil {
             overlapExistsExpectation?.fulfill()
         } else {
             overlapNilExpectation?.fulfill()

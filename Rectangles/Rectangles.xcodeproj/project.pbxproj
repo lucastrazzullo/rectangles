@@ -9,20 +9,30 @@
 /* Begin PBXBuildFile section */
 		81057275238296CB00F49786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81057274238296CB00F49786 /* AppDelegate.swift */; };
 		81057277238296CB00F49786 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81057276238296CB00F49786 /* SceneDelegate.swift */; };
-		81057279238296CB00F49786 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81057278238296CB00F49786 /* ViewController.swift */; };
+		81057279238296CB00F49786 /* ViewportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81057278238296CB00F49786 /* ViewportViewController.swift */; };
 		8105727C238296CB00F49786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8105727A238296CB00F49786 /* Main.storyboard */; };
 		8105727E238296CC00F49786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8105727D238296CC00F49786 /* Assets.xcassets */; };
 		81057281238296CC00F49786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8105727F238296CC00F49786 /* LaunchScreen.storyboard */; };
-		8105728E2382974400F49786 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105728D2382974400F49786 /* Viewport.swift */; };
 		81057290238297A600F49786 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105728F238297A600F49786 /* Size.swift */; };
 		81057298238297FF00F49786 /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81057297238297FF00F49786 /* SizeTests.swift */; };
-		810572A0238298F400F49786 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105729F238298F400F49786 /* Frame.swift */; };
+		810572A0238298F400F49786 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105729F238298F400F49786 /* Rectangle.swift */; };
 		810572A22382990700F49786 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A12382990700F49786 /* Position.swift */; };
-		810572A62382C2E500F49786 /* FrameOverlapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A52382C2E500F49786 /* FrameOverlapTests.swift */; };
-		810572A92382C30C00F49786 /* FrameBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A82382C30C00F49786 /* FrameBuilder.swift */; };
-		810572AB2382C38C00F49786 /* FrameAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572AA2382C38C00F49786 /* FrameAreaTests.swift */; };
+		810572A62382C2E500F49786 /* RectangleOverlapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A52382C2E500F49786 /* RectangleOverlapTests.swift */; };
+		810572A92382C30C00F49786 /* RectangleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A82382C30C00F49786 /* RectangleBuilder.swift */; };
+		810572AB2382C38C00F49786 /* RectangleAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572AA2382C38C00F49786 /* RectangleAreaTests.swift */; };
 		810572B02382CE0D00F49786 /* ViewportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572AF2382CE0D00F49786 /* ViewportTests.swift */; };
 		810572B22382D29700F49786 /* ViewportBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572B12382D29700F49786 /* ViewportBuilder.swift */; };
+		817D3C5823832A96004BFAA5 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C5723832A96004BFAA5 /* DraggableView.swift */; };
+		817D3C5F23834665004BFAA5 /* RectangleViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C5E23834665004BFAA5 /* RectangleViewModelFactory.swift */; };
+		817D3C6223834A80004BFAA5 /* RectangleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C6123834A80004BFAA5 /* RectangleViewModel.swift */; };
+		817D3C6423834AA1004BFAA5 /* OverlapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C6323834AA1004BFAA5 /* OverlapViewModel.swift */; };
+		817D3C6623834B94004BFAA5 /* RectangleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 817D3C6523834B94004BFAA5 /* RectangleView.xib */; };
+		817D3C682383606A004BFAA5 /* FormatterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C672383606A004BFAA5 /* FormatterFactory.swift */; };
+		81FEEE1F2382EA040084E07A /* ViewportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FEEE1E2382EA040084E07A /* ViewportView.swift */; };
+		81FEEE242382F9720084E07A /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FEEE232382F9720084E07A /* RectangleView.swift */; };
+		81FEEE35238314CC0084E07A /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FEEE34238314CC0084E07A /* Viewport.swift */; };
+		81FEEE3723831C820084E07A /* OverlapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FEEE3623831C820084E07A /* OverlapView.swift */; };
+		81FEEE3A23831D470084E07A /* OverlapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FEEE3923831D470084E07A /* OverlapView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,23 +49,33 @@
 		81057271238296CB00F49786 /* Rectangles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rectangles.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81057274238296CB00F49786 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81057276238296CB00F49786 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		81057278238296CB00F49786 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		81057278238296CB00F49786 /* ViewportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportViewController.swift; sourceTree = "<group>"; };
 		8105727B238296CB00F49786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8105727D238296CC00F49786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81057280238296CC00F49786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81057282238296CC00F49786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8105728D2382974400F49786 /* Viewport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
 		8105728F238297A600F49786 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		81057295238297FF00F49786 /* Rectangles Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rectangles Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81057297238297FF00F49786 /* SizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeTests.swift; sourceTree = "<group>"; };
 		81057299238297FF00F49786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8105729F238298F400F49786 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
+		8105729F238298F400F49786 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
 		810572A12382990700F49786 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
-		810572A52382C2E500F49786 /* FrameOverlapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameOverlapTests.swift; sourceTree = "<group>"; };
-		810572A82382C30C00F49786 /* FrameBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBuilder.swift; sourceTree = "<group>"; };
-		810572AA2382C38C00F49786 /* FrameAreaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameAreaTests.swift; sourceTree = "<group>"; };
+		810572A52382C2E500F49786 /* RectangleOverlapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleOverlapTests.swift; sourceTree = "<group>"; };
+		810572A82382C30C00F49786 /* RectangleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleBuilder.swift; sourceTree = "<group>"; };
+		810572AA2382C38C00F49786 /* RectangleAreaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleAreaTests.swift; sourceTree = "<group>"; };
 		810572AF2382CE0D00F49786 /* ViewportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportTests.swift; sourceTree = "<group>"; };
 		810572B12382D29700F49786 /* ViewportBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportBuilder.swift; sourceTree = "<group>"; };
+		817D3C5723832A96004BFAA5 /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		817D3C5E23834665004BFAA5 /* RectangleViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleViewModelFactory.swift; sourceTree = "<group>"; };
+		817D3C6123834A80004BFAA5 /* RectangleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleViewModel.swift; sourceTree = "<group>"; };
+		817D3C6323834AA1004BFAA5 /* OverlapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapViewModel.swift; sourceTree = "<group>"; };
+		817D3C6523834B94004BFAA5 /* RectangleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RectangleView.xib; sourceTree = "<group>"; };
+		817D3C672383606A004BFAA5 /* FormatterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterFactory.swift; sourceTree = "<group>"; };
+		81FEEE1E2382EA040084E07A /* ViewportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportView.swift; sourceTree = "<group>"; };
+		81FEEE232382F9720084E07A /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
+		81FEEE34238314CC0084E07A /* Viewport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
+		81FEEE3623831C820084E07A /* OverlapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapView.swift; sourceTree = "<group>"; };
+		81FEEE3923831D470084E07A /* OverlapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlapView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8105728C2382972D00F49786 /* Application */,
-				81057274238296CB00F49786 /* AppDelegate.swift */,
-				81057276238296CB00F49786 /* SceneDelegate.swift */,
-				81057278238296CB00F49786 /* ViewController.swift */,
+				81FEEE1C2382E8D70084E07A /* Interface */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -118,6 +136,7 @@
 		81057289238296DB00F49786 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				81FEEE3823831D350084E07A /* Xib */,
 				8105728A238296E200F49786 /* Storyboard */,
 				8105727D238296CC00F49786 /* Assets.xcassets */,
 			);
@@ -138,8 +157,8 @@
 			children = (
 				8105728F238297A600F49786 /* Size.swift */,
 				810572A12382990700F49786 /* Position.swift */,
-				8105729F238298F400F49786 /* Frame.swift */,
-				8105728D2382974400F49786 /* Viewport.swift */,
+				8105729F238298F400F49786 /* Rectangle.swift */,
+				81FEEE34238314CC0084E07A /* Viewport.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -156,7 +175,7 @@
 		810572A72382C2FE00F49786 /* Builder */ = {
 			isa = PBXGroup;
 			children = (
-				810572A82382C30C00F49786 /* FrameBuilder.swift */,
+				810572A82382C30C00F49786 /* RectangleBuilder.swift */,
 				810572B12382D29700F49786 /* ViewportBuilder.swift */,
 			);
 			path = Builder;
@@ -167,11 +186,62 @@
 			children = (
 				810572A72382C2FE00F49786 /* Builder */,
 				81057297238297FF00F49786 /* SizeTests.swift */,
-				810572AA2382C38C00F49786 /* FrameAreaTests.swift */,
-				810572A52382C2E500F49786 /* FrameOverlapTests.swift */,
+				810572AA2382C38C00F49786 /* RectangleAreaTests.swift */,
+				810572A52382C2E500F49786 /* RectangleOverlapTests.swift */,
 				810572AF2382CE0D00F49786 /* ViewportTests.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		817D3C6023834A2E004BFAA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				817D3C672383606A004BFAA5 /* FormatterFactory.swift */,
+				817D3C5E23834665004BFAA5 /* RectangleViewModelFactory.swift */,
+				817D3C6123834A80004BFAA5 /* RectangleViewModel.swift */,
+				817D3C6323834AA1004BFAA5 /* OverlapViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81FEEE1C2382E8D70084E07A /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				81057274238296CB00F49786 /* AppDelegate.swift */,
+				81057276238296CB00F49786 /* SceneDelegate.swift */,
+				817D3C6023834A2E004BFAA5 /* Model */,
+				81FEEE202382EA070084E07A /* View */,
+				81FEEE1D2382E9F90084E07A /* Controller */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		81FEEE1D2382E9F90084E07A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81057278238296CB00F49786 /* ViewportViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		81FEEE202382EA070084E07A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				817D3C5723832A96004BFAA5 /* DraggableView.swift */,
+				81FEEE232382F9720084E07A /* RectangleView.swift */,
+				81FEEE3623831C820084E07A /* OverlapView.swift */,
+				81FEEE1E2382EA040084E07A /* ViewportView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		81FEEE3823831D350084E07A /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				817D3C6523834B94004BFAA5 /* RectangleView.xib */,
+				81FEEE3923831D470084E07A /* OverlapView.xib */,
+			);
+			path = Xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +325,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817D3C6623834B94004BFAA5 /* RectangleView.xib in Resources */,
+				81FEEE3A23831D470084E07A /* OverlapView.xib in Resources */,
 				81057281238296CC00F49786 /* LaunchScreen.storyboard in Resources */,
 				8105727E238296CC00F49786 /* Assets.xcassets in Resources */,
 				8105727C238296CB00F49786 /* Main.storyboard in Resources */,
@@ -275,11 +347,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81FEEE3723831C820084E07A /* OverlapView.swift in Sources */,
+				81FEEE1F2382EA040084E07A /* ViewportView.swift in Sources */,
 				810572A22382990700F49786 /* Position.swift in Sources */,
-				81057279238296CB00F49786 /* ViewController.swift in Sources */,
+				817D3C6223834A80004BFAA5 /* RectangleViewModel.swift in Sources */,
+				81057279238296CB00F49786 /* ViewportViewController.swift in Sources */,
+				81FEEE242382F9720084E07A /* RectangleView.swift in Sources */,
+				817D3C5823832A96004BFAA5 /* DraggableView.swift in Sources */,
+				817D3C682383606A004BFAA5 /* FormatterFactory.swift in Sources */,
+				817D3C5F23834665004BFAA5 /* RectangleViewModelFactory.swift in Sources */,
+				817D3C6423834AA1004BFAA5 /* OverlapViewModel.swift in Sources */,
 				81057290238297A600F49786 /* Size.swift in Sources */,
-				8105728E2382974400F49786 /* Viewport.swift in Sources */,
-				810572A0238298F400F49786 /* Frame.swift in Sources */,
+				810572A0238298F400F49786 /* Rectangle.swift in Sources */,
+				81FEEE35238314CC0084E07A /* Viewport.swift in Sources */,
 				81057275238296CB00F49786 /* AppDelegate.swift in Sources */,
 				81057277238296CB00F49786 /* SceneDelegate.swift in Sources */,
 			);
@@ -290,11 +370,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81057298238297FF00F49786 /* SizeTests.swift in Sources */,
-				810572A62382C2E500F49786 /* FrameOverlapTests.swift in Sources */,
+				810572A62382C2E500F49786 /* RectangleOverlapTests.swift in Sources */,
 				810572B02382CE0D00F49786 /* ViewportTests.swift in Sources */,
 				810572B22382D29700F49786 /* ViewportBuilder.swift in Sources */,
-				810572AB2382C38C00F49786 /* FrameAreaTests.swift in Sources */,
-				810572A92382C30C00F49786 /* FrameBuilder.swift in Sources */,
+				810572AB2382C38C00F49786 /* RectangleAreaTests.swift in Sources */,
+				810572A92382C30C00F49786 /* RectangleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

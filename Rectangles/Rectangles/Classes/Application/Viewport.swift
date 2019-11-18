@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ViewportDelegate: AnyObject {
-    func viewport(_ viewport: Viewport, didOccour overlappedFrame: Frame?)
+    func viewport(_ viewport: Viewport, didUpdate overlappedRectangle: Rectangle?)
 }
 
 
@@ -17,39 +17,46 @@ class Viewport {
 
     weak var delegate: ViewportDelegate? {
         didSet {
-            checkOverlappedFrames()
+            checkOverlappedRectangles()
         }
     }
 
-    var frame1: Frame? {
-        didSet {
-            checkOverlappedFrames()
-        }
-    }
-    var frame2: Frame? {
-        didSet {
-            checkOverlappedFrames()
-        }
-    }
+    private(set) var rectangle1: Rectangle
+    private(set) var rectangle2: Rectangle
+
+    var rectangle1Identifier: UUID = UUID()
+    var rectangle2Identifier: UUID = UUID()
 
 
     // MARK: Object life cycle
 
-    init(frame1: Frame, frame2: Frame) {
-        self.frame1 = frame1
-        self.frame2 = frame2
+    init(rectangle1: Rectangle, rectangle2: Rectangle) {
+        self.rectangle1 = rectangle1
+        self.rectangle2 = rectangle2
+    }
+
+
+    // MARK: Public methods
+
+    func update(center: Position, forRectangleWith identifier: UUID) {
+        if identifier == rectangle1Identifier {
+            rectangle1.center = center
+        }
+        if identifier == rectangle2Identifier {
+            rectangle2.center = center
+        }
+        checkOverlappedRectangles()
     }
 
 
     // MARK: Overlap checking logic
 
-    private func checkOverlappedFrames() {
-        delegate?.viewport(self, didOccour: getOverlappedFrame())
+    private func checkOverlappedRectangles() {
+        delegate?.viewport(self, didUpdate: getOverlappedRectangle())
     }
 
 
-    private func getOverlappedFrame() -> Frame? {
-        guard let frame1 = frame1, let frame2 = frame2 else { return nil }
-        return frame1.overlapped(with: frame2)
+    private func getOverlappedRectangle() -> Rectangle? {
+        return rectangle1.overlapped(with: rectangle2)
     }
 }
