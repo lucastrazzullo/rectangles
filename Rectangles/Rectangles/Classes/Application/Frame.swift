@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Frame: Hashable {
+struct Frame {
 
-    let position: Position
+    var position: Position
     let size: Size
 
 

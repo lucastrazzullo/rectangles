@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Size: Hashable {
+struct Size {
 
     let width: Float
     let height: Float

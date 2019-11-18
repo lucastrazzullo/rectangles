@@ -21,6 +21,8 @@
 		810572A62382C2E500F49786 /* FrameOverlapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A52382C2E500F49786 /* FrameOverlapTests.swift */; };
 		810572A92382C30C00F49786 /* FrameBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A82382C30C00F49786 /* FrameBuilder.swift */; };
 		810572AB2382C38C00F49786 /* FrameAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572AA2382C38C00F49786 /* FrameAreaTests.swift */; };
+		810572B02382CE0D00F49786 /* ViewportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572AF2382CE0D00F49786 /* ViewportTests.swift */; };
+		810572B22382D29700F49786 /* ViewportBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572B12382D29700F49786 /* ViewportBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		810572A52382C2E500F49786 /* FrameOverlapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameOverlapTests.swift; sourceTree = "<group>"; };
 		810572A82382C30C00F49786 /* FrameBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBuilder.swift; sourceTree = "<group>"; };
 		810572AA2382C38C00F49786 /* FrameAreaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameAreaTests.swift; sourceTree = "<group>"; };
+		810572AF2382CE0D00F49786 /* ViewportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportTests.swift; sourceTree = "<group>"; };
+		810572B12382D29700F49786 /* ViewportBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,10 +147,7 @@
 		81057296238297FF00F49786 /* Rectangles Tests */ = {
 			isa = PBXGroup;
 			children = (
-				810572A72382C2FE00F49786 /* Builder */,
-				81057297238297FF00F49786 /* SizeTests.swift */,
-				810572AA2382C38C00F49786 /* FrameAreaTests.swift */,
-				810572A52382C2E500F49786 /* FrameOverlapTests.swift */,
+				810572AE2382CDFB00F49786 /* Classes */,
 				81057299238297FF00F49786 /* Info.plist */,
 			);
 			path = "Rectangles Tests";
@@ -156,8 +157,21 @@
 			isa = PBXGroup;
 			children = (
 				810572A82382C30C00F49786 /* FrameBuilder.swift */,
+				810572B12382D29700F49786 /* ViewportBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		810572AE2382CDFB00F49786 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				810572A72382C2FE00F49786 /* Builder */,
+				81057297238297FF00F49786 /* SizeTests.swift */,
+				810572AA2382C38C00F49786 /* FrameAreaTests.swift */,
+				810572A52382C2E500F49786 /* FrameOverlapTests.swift */,
+				810572AF2382CE0D00F49786 /* ViewportTests.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +291,8 @@
 			files = (
 				81057298238297FF00F49786 /* SizeTests.swift in Sources */,
 				810572A62382C2E500F49786 /* FrameOverlapTests.swift in Sources */,
+				810572B02382CE0D00F49786 /* ViewportTests.swift in Sources */,
+				810572B22382D29700F49786 /* ViewportBuilder.swift in Sources */,
 				810572AB2382C38C00F49786 /* FrameAreaTests.swift in Sources */,
 				810572A92382C30C00F49786 /* FrameBuilder.swift in Sources */,
 			);

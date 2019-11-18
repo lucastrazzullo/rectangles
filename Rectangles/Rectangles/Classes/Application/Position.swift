@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Position: Hashable {
+struct Position {
     let x: Float
     let y: Float
 }
