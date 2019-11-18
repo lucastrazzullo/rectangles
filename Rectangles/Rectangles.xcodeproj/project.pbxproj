@@ -13,7 +13,20 @@
 		8105727C238296CB00F49786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8105727A238296CB00F49786 /* Main.storyboard */; };
 		8105727E238296CC00F49786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8105727D238296CC00F49786 /* Assets.xcassets */; };
 		81057281238296CC00F49786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8105727F238296CC00F49786 /* LaunchScreen.storyboard */; };
+		8105728E2382974400F49786 /* Viewport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105728D2382974400F49786 /* Viewport.swift */; };
+		81057290238297A600F49786 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105728F238297A600F49786 /* Size.swift */; };
+		81057298238297FF00F49786 /* ViewportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81057297238297FF00F49786 /* ViewportTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8105729A238297FF00F49786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81057269238296CB00F49786 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81057270238296CB00F49786;
+			remoteInfo = Rectangles;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		81057271238296CB00F49786 /* Rectangles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rectangles.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +37,22 @@
 		8105727D238296CC00F49786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81057280238296CC00F49786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81057282238296CC00F49786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8105728D2382974400F49786 /* Viewport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewport.swift; sourceTree = "<group>"; };
+		8105728F238297A600F49786 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		81057295238297FF00F49786 /* Rectangles Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rectangles Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		81057297238297FF00F49786 /* ViewportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportTests.swift; sourceTree = "<group>"; };
+		81057299238297FF00F49786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8105726E238296CB00F49786 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81057292238297FF00F49786 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				81057273238296CB00F49786 /* Rectangles */,
+				81057296238297FF00F49786 /* Rectangles Tests */,
 				81057272238296CB00F49786 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				81057271238296CB00F49786 /* Rectangles.app */,
+				81057295238297FF00F49786 /* Rectangles Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +93,7 @@
 		81057288238296D500F49786 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8105728C2382972D00F49786 /* Application */,
 				81057274238296CB00F49786 /* AppDelegate.swift */,
 				81057276238296CB00F49786 /* SceneDelegate.swift */,
 				81057278238296CB00F49786 /* ViewController.swift */,
@@ -91,6 +119,24 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		8105728C2382972D00F49786 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8105728D2382974400F49786 /* Viewport.swift */,
+				8105728F238297A600F49786 /* Size.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		81057296238297FF00F49786 /* Rectangles Tests */ = {
+			isa = PBXGroup;
+			children = (
+				81057297238297FF00F49786 /* ViewportTests.swift */,
+				81057299238297FF00F49786 /* Info.plist */,
+			);
+			path = "Rectangles Tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -111,6 +157,24 @@
 			productReference = 81057271238296CB00F49786 /* Rectangles.app */;
 			productType = "com.apple.product-type.application";
 		};
+		81057294238297FF00F49786 /* Rectangles Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8105729C238297FF00F49786 /* Build configuration list for PBXNativeTarget "Rectangles Tests" */;
+			buildPhases = (
+				81057291238297FF00F49786 /* Sources */,
+				81057292238297FF00F49786 /* Frameworks */,
+				81057293238297FF00F49786 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8105729B238297FF00F49786 /* PBXTargetDependency */,
+			);
+			name = "Rectangles Tests";
+			productName = "Rectangles Tests";
+			productReference = 81057295238297FF00F49786 /* Rectangles Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -123,6 +187,10 @@
 				TargetAttributes = {
 					81057270238296CB00F49786 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					81057294238297FF00F49786 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 81057270238296CB00F49786;
 					};
 				};
 			};
@@ -140,6 +208,7 @@
 			projectRoot = "";
 			targets = (
 				81057270238296CB00F49786 /* Rectangles */,
+				81057294238297FF00F49786 /* Rectangles Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +224,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81057293238297FF00F49786 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -163,12 +239,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				81057279238296CB00F49786 /* ViewController.swift in Sources */,
+				81057290238297A600F49786 /* Size.swift in Sources */,
+				8105728E2382974400F49786 /* Viewport.swift in Sources */,
 				81057275238296CB00F49786 /* AppDelegate.swift in Sources */,
 				81057277238296CB00F49786 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		81057291238297FF00F49786 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81057298238297FF00F49786 /* ViewportTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8105729B238297FF00F49786 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81057270238296CB00F49786 /* Rectangles */;
+			targetProxy = 8105729A238297FF00F49786 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8105727A238296CB00F49786 /* Main.storyboard */ = {
@@ -318,7 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucastrazzullo.Rectangles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -336,7 +430,47 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lucastrazzullo.Rectangles;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		8105729D238297FF00F49786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UC9U5RZ8UF;
+				INFOPLIST_FILE = "Rectangles Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucastrazzullo.Rectangles-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rectangles.app/Rectangles";
+			};
+			name = Debug;
+		};
+		8105729E238297FF00F49786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UC9U5RZ8UF;
+				INFOPLIST_FILE = "Rectangles Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucastrazzullo.Rectangles-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rectangles.app/Rectangles";
 			};
 			name = Release;
 		};
@@ -357,6 +491,15 @@
 			buildConfigurations = (
 				81057286238296CC00F49786 /* Debug */,
 				81057287238296CC00F49786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8105729C238297FF00F49786 /* Build configuration list for PBXNativeTarget "Rectangles Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8105729D238297FF00F49786 /* Debug */,
+				8105729E238297FF00F49786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
