@@ -16,7 +16,12 @@ struct Frame: Hashable {
 
     // MARK: Public methods
 
-    func overllapped(with frame: Frame) -> Frame? {
+    var area: Float {
+        return size.width * size.height
+    }
+
+
+    func overlapped(with frame: Frame) -> Frame? {
         return Frame.withOverlapBetween(frame1: self, frame2: frame)
     }
 

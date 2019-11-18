@@ -18,7 +18,9 @@
 		81057298238297FF00F49786 /* SizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81057297238297FF00F49786 /* SizeTests.swift */; };
 		810572A0238298F400F49786 /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8105729F238298F400F49786 /* Frame.swift */; };
 		810572A22382990700F49786 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A12382990700F49786 /* Position.swift */; };
-		810572A42382A00300F49786 /* FrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A32382A00300F49786 /* FrameTests.swift */; };
+		810572A62382C2E500F49786 /* FrameOverlapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A52382C2E500F49786 /* FrameOverlapTests.swift */; };
+		810572A92382C30C00F49786 /* FrameBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A82382C30C00F49786 /* FrameBuilder.swift */; };
+		810572AB2382C38C00F49786 /* FrameAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572AA2382C38C00F49786 /* FrameAreaTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +49,9 @@
 		81057299238297FF00F49786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8105729F238298F400F49786 /* Frame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frame.swift; sourceTree = "<group>"; };
 		810572A12382990700F49786 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
-		810572A32382A00300F49786 /* FrameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameTests.swift; sourceTree = "<group>"; };
+		810572A52382C2E500F49786 /* FrameOverlapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameOverlapTests.swift; sourceTree = "<group>"; };
+		810572A82382C30C00F49786 /* FrameBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameBuilder.swift; sourceTree = "<group>"; };
+		810572AA2382C38C00F49786 /* FrameAreaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameAreaTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,11 +143,21 @@
 		81057296238297FF00F49786 /* Rectangles Tests */ = {
 			isa = PBXGroup;
 			children = (
+				810572A72382C2FE00F49786 /* Builder */,
 				81057297238297FF00F49786 /* SizeTests.swift */,
-				810572A32382A00300F49786 /* FrameTests.swift */,
+				810572AA2382C38C00F49786 /* FrameAreaTests.swift */,
+				810572A52382C2E500F49786 /* FrameOverlapTests.swift */,
 				81057299238297FF00F49786 /* Info.plist */,
 			);
 			path = "Rectangles Tests";
+			sourceTree = "<group>";
+		};
+		810572A72382C2FE00F49786 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				810572A82382C30C00F49786 /* FrameBuilder.swift */,
+			);
+			path = Builder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				81057298238297FF00F49786 /* SizeTests.swift in Sources */,
-				810572A42382A00300F49786 /* FrameTests.swift in Sources */,
+				810572A62382C2E500F49786 /* FrameOverlapTests.swift in Sources */,
+				810572AB2382C38C00F49786 /* FrameAreaTests.swift in Sources */,
+				810572A92382C30C00F49786 /* FrameBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
