@@ -10,7 +10,7 @@ import Foundation
 
 struct Frame {
 
-    var position: Position
+    var center: Position
     let size: Size
 
 
@@ -29,20 +29,20 @@ struct Frame {
     // MARK: Private helper methods
 
     private static func withOverlapBetween(frame1: Frame, frame2: Frame) -> Frame? {
-        let x = max(frame1.position.x, frame2.position.x)
-        let y = max(frame1.position.y, frame2.position.y)
+        let minimumX = max(frame1.center.x - frame1.size.width / 2, frame2.center.x - frame2.size.width / 2)
+        let minimumY = max(frame1.center.y - frame1.size.height / 2, frame2.center.y - frame2.size.height / 2)
 
-        let maximumX = min(frame1.position.x + frame1.size.width, frame2.position.x + frame2.size.width)
-        let maximumY = min(frame1.position.y + frame1.size.height, frame2.position.y + frame2.size.height)
+        let maximumX = min(frame1.center.x + frame1.size.width / 2, frame2.center.x + frame2.size.width / 2)
+        let maximumY = min(frame1.center.y + frame1.size.height / 2, frame2.center.y + frame2.size.height / 2)
 
-        let width = maximumX - x
-        let height = maximumY - y
+        let width = maximumX - minimumX
+        let height = maximumY - minimumY
 
         let size = Size(width: width, height: height)
-        let position = Position(x: x, y: y)
+        let center = Position(x: minimumX + width / 2, y: minimumY + height / 2)
 
         if let size = size {
-            return Frame(position: position, size: size)
+            return Frame(center: center, size: size)
         } else {
             return nil
         }

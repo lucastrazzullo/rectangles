@@ -49,21 +49,21 @@ class ViewportTests: XCTestCase {
         delegate.overlapNilExpectation = overlapNilExpectation
 
         let size = Size(width: 10, height: 10)!
-        let position1 = Position(x: -10, y: -10)
-        let position2 = Position(x: 10, y: 10)
-        let viewport = ViewportBuilder.buildViewport(position1: position1, position2: position2, size: size)
+        let center1 = Position(x: -10, y: -10)
+        let center2 = Position(x: 10, y: 10)
+        let viewport = ViewportBuilder.buildViewport(center1: center1, center2: center2, size: size)
 
         // Will produce a nil overlap as the initial viewport has been built with no overlapped frames
         viewport.delegate = delegate
 
         // Will produce an overlap by moving the frame 1 in a position that overlaps with frame 2
-        viewport.frame1?.position = Position(x: 5, y: 5)
+        viewport.frame1?.center = Position(x: 5, y: 5)
 
         // Will produce a nil overlap by moving the frame 2 out of a position that overlaps with frame 1
-        viewport.frame2?.position = Position(x: -10, y: -10)
+        viewport.frame2?.center = Position(x: -10, y: -10)
 
         // Will produce an overlap by moving the frame 1 back to a position that overlaps with frame 2
-        viewport.frame1?.position = Position(x: -5, y: -5)
+        viewport.frame1?.center = Position(x: -5, y: -5)
 
         wait(for: [overlapNilExpectation, overlapExistsExpectation], timeout: 0.1)
     }
