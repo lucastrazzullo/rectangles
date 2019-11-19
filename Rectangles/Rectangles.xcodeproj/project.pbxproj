@@ -123,8 +123,11 @@
 		81057288238296D500F49786 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8105728C2382972D00F49786 /* Application */,
-				81FEEE1C2382E8D70084E07A /* Interface */,
+				81057274238296CB00F49786 /* AppDelegate.swift */,
+				81057276238296CB00F49786 /* SceneDelegate.swift */,
+				817D3C6023834A2E004BFAA5 /* Model */,
+				81FEEE202382EA070084E07A /* View */,
+				81FEEE1D2382E9F90084E07A /* Controller */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -148,14 +151,14 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		8105728C2382972D00F49786 /* Application */ = {
+		8105728C2382972D00F49786 /* Domain model */ = {
 			isa = PBXGroup;
 			children = (
 				8105728F238297A600F49786 /* Size.swift */,
 				810572A12382990700F49786 /* Position.swift */,
 				8105729F238298F400F49786 /* Rectangle.swift */,
 			);
-			path = Application;
+			path = "Domain model";
 			sourceTree = "<group>";
 		};
 		81057296238297FF00F49786 /* Rectangles Tests */ = {
@@ -189,24 +192,21 @@
 		817D3C6023834A2E004BFAA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8105728C2382972D00F49786 /* Domain model */,
+				817D3C752384421B004BFAA5 /* View model */,
 				817D3C672383606A004BFAA5 /* FormatterFactory.swift */,
-				817D3C6123834A80004BFAA5 /* RectangleViewModel.swift */,
-				817D3C6323834AA1004BFAA5 /* OverlapViewModel.swift */,
 				817D3C7123840A58004BFAA5 /* RectanglesRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		81FEEE1C2382E8D70084E07A /* Interface */ = {
+		817D3C752384421B004BFAA5 /* View model */ = {
 			isa = PBXGroup;
 			children = (
-				81057274238296CB00F49786 /* AppDelegate.swift */,
-				81057276238296CB00F49786 /* SceneDelegate.swift */,
-				817D3C6023834A2E004BFAA5 /* Model */,
-				81FEEE202382EA070084E07A /* View */,
-				81FEEE1D2382E9F90084E07A /* Controller */,
+				817D3C6123834A80004BFAA5 /* RectangleViewModel.swift */,
+				817D3C6323834AA1004BFAA5 /* OverlapViewModel.swift */,
 			);
-			path = Interface;
+			path = "View model";
 			sourceTree = "<group>";
 		};
 		81FEEE1D2382E9F90084E07A /* Controller */ = {
