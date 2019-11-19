@@ -9,7 +9,8 @@
 import UIKit
 
 protocol ViewportViewDelegate: AnyObject {
-    func viewportView(_ view: ViewportView, didUpdateRectangle center: CGPoint, at index: Int)
+    func viewportView(_ view: ViewportView, isUpdating center: CGPoint, at index: Int)
+    func viewportView(_ view: ViewportView, didUpdate center: CGPoint, at index: Int)
 }
 
 
@@ -81,12 +82,16 @@ extension ViewportView: DraggableViewDelegate {
     func draggableViewDidEndDragging(_ view: DraggableView) {
         view.layer.shadowColor = nil
         view.layer.shadowOpacity = 0
+
+        if let view = view as? RectangleView, let index = rectangleIndexes[view] {
+            delegate?.viewportView(self, didUpdate: view.center, at: index)
+        }
     }
 
 
     func draggableViewDidUpdate(_ view: DraggableView) {
         if let view = view as? RectangleView, let index = rectangleIndexes[view] {
-            delegate?.viewportView(self, didUpdateRectangle: view.center, at: index)
+            delegate?.viewportView(self, isUpdating: view.center, at: index)
         }
     }
 }

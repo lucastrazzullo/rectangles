@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import Combine
 
 protocol RectanglesRepository {
-    func fetchRectangles(with completion: @escaping ([AnyRectangle]) -> ())
+    func fetchRectangles() -> AnyPublisher<[AnyRectangle], Never>
 }

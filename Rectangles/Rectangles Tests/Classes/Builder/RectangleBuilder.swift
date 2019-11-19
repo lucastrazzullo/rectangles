@@ -13,7 +13,7 @@ class RectangleBuilder {
 
     static func buildRectangleWith(xPercentage: Double, yPercentage: Double, widthPercentage: Double, heightPercentage: Double) -> Rectangle? {
         guard let size = Size(widthPercentage: widthPercentage, heightPercentage: heightPercentage) else { return nil }
-        let center = Position(xPercentage: xPercentage, yPercentage: yPercentage)
+        let center = AnyPosition(xPercentage: xPercentage, yPercentage: yPercentage)
         return AnyRectangle(center: center, size: size)
     }
 }

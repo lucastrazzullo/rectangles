@@ -25,4 +25,20 @@ struct AnyRectangle: Rectangle, Hashable {
         center = rectangle.center
         size = rectangle.size
     }
+
+
+    // MARK: Hashable conformance
+
+    static func == (lhs: AnyRectangle, rhs: AnyRectangle) -> Bool {
+        return lhs.center.xPercentage == rhs.center.xPercentage
+            && lhs.center.yPercentage == rhs.center.yPercentage
+            && lhs.size.widthPercentage == rhs.size.widthPercentage
+            && lhs.size.heightPercentage == rhs.size.heightPercentage
+    }
+
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(AnyPosition(center))
+        hasher.combine(size)
+    }
 }

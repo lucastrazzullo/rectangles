@@ -38,7 +38,7 @@ struct FileBackedRectangle: Rectangle, Decodable {
         let yPercentage = try container.decode(Double.self, forKey: .y)
         let sideLengthPercentage = try container.decode(Double.self, forKey: .size)
 
-        center = Position(xPercentage: xPercentage, yPercentage: yPercentage)
+        center = AnyPosition(xPercentage: xPercentage, yPercentage: yPercentage)
         size = try FileBackedRectangle.parseSize(with: sideLengthPercentage)
     }
 

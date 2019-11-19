@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 class FileRectanglesRepository: RectanglesRepository {
 
@@ -26,14 +27,16 @@ class FileRectanglesRepository: RectanglesRepository {
 
     // MARK: Public methods
 
-    func fetchRectangles(with completion: @escaping ([AnyRectangle]) -> ()) {
-        guard let filePath = filePath else { completion([]); return }
-        do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: filePath), options: .mappedIfSafe)
-            let list = try JSONDecoder().decode(FileBackedRectangles.self, from: data)
-            completion(list.rectangles.map(AnyRectangle.init))
-        } catch {
-            completion([])
-        }
+    func fetchRectangles() -> AnyPublisher<[AnyRectangle], Never> {
+        return Future<[AnyRectangle], Never> { [weak self] promise in
+            guard let filePath = self?.filePath else { promise(.success([])); return }
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: filePath), options: .mappedIfSafe)
+                let list = try JSONDecoder().decode(FileBackedRectangles.self, from: data)
+                promise(.success(list.rectangles.map(AnyRectangle.init)))
+            } catch {
+                promise(.success([]))
+            }
+        }.eraseToAnyPublisher()
     }
 }

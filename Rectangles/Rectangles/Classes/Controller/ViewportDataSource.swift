@@ -13,15 +13,14 @@ class ViewportDataSource {
     weak var view: ViewportView? {
         didSet {
             view?.dataSource = self
-            view?.delegate = self
         }
     }
 
-    private var rectangles: [AnyRectangle] = []
+    private(set) var rectangles: [AnyRectangle] = []
     private var overlaps: [AnyRectangle] = []
 
 
-    // MARK: Public methods
+    // MARK: Data
 
     func setRectangles(_ list: [AnyRectangle]) {
         rectangles = list
@@ -38,10 +37,17 @@ class ViewportDataSource {
     }
 
 
-    func updateCenter(_ center: Position, forRectangleAt index: Int) {
-        let rectangle = rectangles[index]
+    func updateCenter(_ center: CGPoint, in bounds: CGRect, forRectangleAt index: Int) {
+        let xPercentage = Double(center.x / bounds.width)
+        let yPercentage = Double(center.y / bounds.height)
+        let center = AnyPosition(xPercentage: xPercentage, yPercentage: yPercentage)
+
+        let previousRectangle = rectangles[index]
         rectangles[index].center = center
-        overlaps = Array(Set(overlaps).subtracting(Set(overlaps(for: rectangle))).union(Set(overlaps(for: rectangles[index]))))
+
+        let overlapsToRemove = Set(overlaps(for: previousRectangle))
+        let overlapsToAdd = Set(overlaps(for: rectangles[index]))
+        overlaps = Array(Set(overlaps).subtracting(overlapsToRemove).union(overlapsToAdd))
 
         view?.reloadOverlaps()
     }
@@ -118,15 +124,5 @@ extension ViewportDataSource: ViewportViewDataSource {
         let origin = CGPoint(x: x - width / 2, y: y - height / 2)
         let size = CGSize(width: width, height: height)
         return CGRect(origin: origin, size: size)
-    }
-}
-
-
-extension ViewportDataSource: ViewportViewDelegate {
-
-    func viewportView(_ view: ViewportView, didUpdateRectangle center: CGPoint, at index: Int) {
-        let xPercentage = Double(center.x / view.bounds.width)
-        let yPercentage = Double(center.y / view.bounds.height)
-        updateCenter(Position(xPercentage: xPercentage, yPercentage: yPercentage), forRectangleAt: index)
     }
 }

@@ -39,7 +39,7 @@ extension Rectangle {
         let width = maximumX - minimumX
         let height = maximumY - minimumY
 
-        let center = Position(xPercentage: minimumX + width / 2, yPercentage: minimumY + height / 2)
+        let center = AnyPosition(xPercentage: minimumX + width / 2, yPercentage: minimumY + height / 2)
         if let size = Size(widthPercentage: width, heightPercentage: height) {
             return Self(center: center, size: size)
         } else {
