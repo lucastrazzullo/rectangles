@@ -10,7 +10,8 @@ import UIKit
 
 class ViewportViewController: UIViewController {
 
-    private let viewport: Viewport
+    private let repository: RectanglesRepository
+    private let viewDataSource: ViewportDataSource
 
     @IBOutlet private var viewportView: ViewportView!
 
@@ -18,9 +19,8 @@ class ViewportViewController: UIViewController {
     // MARK: Object life cycle
 
     required init?(coder: NSCoder) {
-        let rectangle1 = Rectangle(center: Position(x: 200, y: 100), size: Size(width: 200, height: 100)!)
-        let rectangle2 = Rectangle(center: Position(x: 200, y: 300), size: Size(width: 200, height: 100)!)
-        viewport = Viewport(rectangle1: rectangle1, rectangle2: rectangle2)
+        repository = RectanglesRepository()
+        viewDataSource = ViewportDataSource()
         super.init(coder: coder)
     }
 
@@ -29,47 +29,30 @@ class ViewportViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewport.delegate = self
         viewportView.delegate = self
-
-        addRectangleViews()
+        viewDataSource.view = viewportView
     }
 
 
-    // MARK: Private helper methods
-
-    private func addRectangleViews() {
-        let rectangle1ViewModel = RectangleViewModelFactory.makeRectangleViewModel(with: viewport.rectangle1, identifier: viewport.rectangle1Identifier)
-        let rectangle2ViewModel = RectangleViewModelFactory.makeRectangleViewModel(with: viewport.rectangle2, identifier: viewport.rectangle2Identifier)
-
-        viewportView.addOrUpdateRectangleView(with: rectangle1ViewModel)
-        viewportView.addOrUpdateRectangleView(with: rectangle2ViewModel)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        fetchRectangles()
     }
 
 
-    private func updateOverlapView(with rectangle: Rectangle?) {
-        if let rectangle = rectangle {
-            let viewModel = RectangleViewModelFactory.makeOverlapViewModel(with: rectangle)
-            viewportView.addOrUpdateOverlapView(with: viewModel)
-        } else {
-            viewportView.removeOverlapView()
+    // MARK: Private helper methdos
+
+    private func fetchRectangles() {
+        repository.getRectangles { [weak self] rectangles in
+            self?.viewDataSource.setRectangles(rectangles)
         }
-    }
-}
-
-
-extension ViewportViewController: ViewportDelegate {
-
-    func viewport(_ viewport: Viewport, didUpdate overlappedRectangle: Rectangle?) {
-        updateOverlapView(with: overlappedRectangle)
     }
 }
 
 
 extension ViewportViewController: ViewportViewDelegate {
 
-    func viewportView(_ view: ViewportView, didUpdateRectangle center: CGPoint, with identifier: UUID) {
-        let position = Position(x: Float(center.x), y: Float(center.y))
-        viewport.update(center: position, forRectangleWith: identifier)
+    func viewportView(_ view: ViewportView, didUpdateRectangle center: CGPoint, at index: Int) {
+        viewDataSource.updateCenter(Position(x: Float(center.x), y: Float(center.y)), forRectangleAt: index)
     }
 }

@@ -9,13 +9,27 @@
 import UIKit
 
 protocol ViewportViewDelegate: AnyObject {
-    func viewportView(_ view: ViewportView, didUpdateRectangle center: CGPoint, with identifier: UUID)
+    func viewportView(_ view: ViewportView, didUpdateRectangle center: CGPoint, at index: Int)
+}
+
+
+protocol ViewportViewDataSource: AnyObject {
+    func numberOfRectanglesInViewportView(_ view: ViewportView) -> Int
+    func numberOfOverlapsInViewportView(_ view: ViewportView) -> Int
+    func viewportView(_ view: ViewportView, rectangleAt index: Int) -> RectangleView
+    func viewportView(_ view: ViewportView, overlapAt index: Int) -> OverlapView
 }
 
 
 class ViewportView: UIView {
 
     weak var delegate: ViewportViewDelegate?
+    weak var dataSource: ViewportViewDataSource?
+
+    private var rectangleIndexes: [RectangleView: Int] = [:]
+
+
+    // MARK: UI Properties
 
     @IBOutlet private var rectangleViewsContainer: UIView!
     @IBOutlet private var overlapViewsContainer: UIView!
@@ -23,29 +37,32 @@ class ViewportView: UIView {
 
     // MARK: Public methods
 
-    func addOrUpdateRectangleView(with viewModel: RectangleViewModel) {
-        if let view = rectangleViewsContainer.subviews.compactMap({ $0 as? RectangleView }).first(where: { $0.identifier == viewModel.identifier }) {
-            view.setup(with: viewModel)
-        } else if let view = RectangleView.fromXib() {
-            view.setup(with: viewModel)
-            view.delegate = self
-            rectangleViewsContainer.addSubview(view)
+    func reloadRectangles() {
+        rectangleViewsContainer.subviews.forEach({ $0.removeFromSuperview() })
+        rectangleIndexes = [:]
+
+        if let numberOfRectangles = dataSource?.numberOfRectanglesInViewportView(self) {
+            for index in 0..<numberOfRectangles {
+                if let view = dataSource?.viewportView(self, rectangleAt: index) {
+                    view.delegate = self
+                    rectangleIndexes[view] = index
+                    rectangleViewsContainer.addSubview(view)
+                }
+            }
         }
     }
 
 
-    func addOrUpdateOverlapView(with viewModel: OverlapViewModel) {
-        if let view = overlapViewsContainer.subviews.compactMap({ $0 as? OverlapView }).first {
-            view.setup(with: viewModel)
-        } else if let view = OverlapView.fromXib() {
-            view.setup(with: viewModel)
-            overlapViewsContainer.addSubview(view)
-        }
-    }
-
-
-    func removeOverlapView() {
+    func reloadOverlaps() {
         overlapViewsContainer.subviews.forEach({ $0.removeFromSuperview() })
+
+        if let numberOfOverlaps = dataSource?.numberOfOverlapsInViewportView(self) {
+            for index in 0..<numberOfOverlaps {
+                if let view = dataSource?.viewportView(self, overlapAt: index) {
+                    overlapViewsContainer.addSubview(view)
+                }
+            }
+        }
     }
 }
 
@@ -68,8 +85,8 @@ extension ViewportView: DraggableViewDelegate {
 
 
     func draggableViewDidUpdate(_ view: DraggableView) {
-        if let view = view as? RectangleView, let identifier = view.identifier {
-            delegate?.viewportView(self, didUpdateRectangle: view.center, with: identifier)
+        if let view = view as? RectangleView, let index = rectangleIndexes[view] {
+            delegate?.viewportView(self, didUpdateRectangle: view.center, at: index)
         }
     }
 }

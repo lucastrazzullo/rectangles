@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Rectangle {
+struct Rectangle: Hashable {
 
     var center: Position
     let size: Size

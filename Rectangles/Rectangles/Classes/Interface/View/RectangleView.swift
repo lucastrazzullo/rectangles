@@ -10,8 +10,6 @@ import UIKit
 
 class RectangleView: DraggableView {
 
-    private(set) var identifier: UUID?
-
     @IBOutlet private var widthLabel: UILabel!
     @IBOutlet private var heightLabel: UILabel!
 
@@ -34,7 +32,6 @@ class RectangleView: DraggableView {
 
     func setup(with viewModel: RectangleViewModel) {
         frame = viewModel.frame
-        identifier = viewModel.identifier
         widthLabel.text = viewModel.width
         heightLabel.text = viewModel.height
     }
