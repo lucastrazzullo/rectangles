@@ -12,13 +12,13 @@ import XCTest
 class SizeTests: XCTestCase {
 
     func testCorrectInstantiation() {
-        let size = Size(width: 10, height: 10)
+        let size = Size(widthPercentage: 0.1, heightPercentage: 0.1)
         XCTAssertNotNil(size)
     }
 
 
     func testWrongInstantiation() {
-        let size = Size(width: 0, height: 10)
+        let size = Size(widthPercentage: 0, heightPercentage: 0.1)
         XCTAssertNil(size)
     }
 }

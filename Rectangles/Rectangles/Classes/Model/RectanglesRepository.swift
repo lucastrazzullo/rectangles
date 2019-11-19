@@ -11,10 +11,11 @@ import Foundation
 class RectanglesRepository {
 
     func getRectangles(with completion: @escaping ([Rectangle]) -> ()) {
+        let size = Size(widthPercentage: 0.6, heightPercentage: 0.2)!
         completion([
-            Rectangle(center: Position(x: 200, y: 100), size: Size(width: 200, height: 100)!),
-            Rectangle(center: Position(x: 200, y: 300), size: Size(width: 200, height: 100)!),
-            Rectangle(center: Position(x: 200, y: 350), size: Size(width: 200, height: 100)!)
+            Rectangle(center: Position(xPercentage: 0.5, yPercentage: 0.2), size: size),
+            Rectangle(center: Position(xPercentage: 0.5, yPercentage: 0.5), size: size),
+            Rectangle(center: Position(xPercentage: 0.5, yPercentage: 0.8), size: size)
         ])
     }
 }

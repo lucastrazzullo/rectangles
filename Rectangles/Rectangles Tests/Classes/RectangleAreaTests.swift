@@ -12,25 +12,31 @@ import XCTest
 class RectangleAreaTests: XCTestCase {
 
     func testArea() {
-        let rectangle = RectangleBuilder.buildRectangleWith(x: 0, y: 0, width: 10, height: 10)
-        let expectedArea = Float(100)
+        let rectangle = RectangleBuilder.buildRectangleWith(xPercentage: 0, yPercentage: 0, widthPercentage: 1, heightPercentage: 1)
+        let viewportWidth: Double = 10
+        let viewportHeight: Double = 10
+        let expectedArea: Double = 100
 
-        XCTAssertEqual(rectangle?.area, expectedArea)
+        XCTAssertEqual(rectangle?.area(withViewport: viewportWidth, height: viewportHeight), expectedArea)
     }
 
 
     func testAreaWithDifferentSides() {
-        let rectangle = RectangleBuilder.buildRectangleWith(x: 0, y: 0, width: 10, height: 20)
-        let expectedArea = Float(200)
+        let rectangle = RectangleBuilder.buildRectangleWith(xPercentage: 0, yPercentage: 0, widthPercentage: 1, heightPercentage: 2)
+        let viewportWidth: Double = 10
+        let viewportHeight: Double = 10
+        let expectedArea: Double = 200
 
-        XCTAssertEqual(rectangle?.area, expectedArea)
+        XCTAssertEqual(rectangle?.area(withViewport: viewportWidth, height: viewportHeight), expectedArea)
     }
 
 
     func testAreaAtDifferentPositions() {
-        let rectangle = RectangleBuilder.buildRectangleWith(x: 30, y: 30, width: 10, height: 20)
-        let expectedArea = Float(200)
+        let rectangle = RectangleBuilder.buildRectangleWith(xPercentage: 0.5, yPercentage: 0.3, widthPercentage: 1, heightPercentage: 2)
+               let viewportWidth: Double = 10
+               let viewportHeight: Double = 10
+               let expectedArea: Double = 200
 
-        XCTAssertEqual(rectangle?.area, expectedArea)
+               XCTAssertEqual(rectangle?.area(withViewport: viewportWidth, height: viewportHeight), expectedArea)
     }
 }

@@ -13,6 +13,7 @@ class ViewportDataSource {
     weak var view: ViewportView? {
         didSet {
             view?.dataSource = self
+            view?.delegate = self
         }
     }
 
@@ -98,13 +99,34 @@ extension ViewportDataSource: ViewportViewDataSource {
 
 
     private func makeOverlapViewModel(with rectangle: Rectangle) -> OverlapViewModel {
-        return OverlapViewModel(frame: frame(from: rectangle), area: rectangle.area)
+        return OverlapViewModel(frame: frame(from: rectangle), area: area(from: rectangle))
+    }
+
+
+    private func area(from rectangle: Rectangle) -> Double {
+        guard let view = view else { return 0 }
+        return rectangle.area(withViewport: Double(view.bounds.width), height: Double(view.bounds.height))
     }
 
 
     private func frame(from rectangle: Rectangle) -> CGRect {
-        let origin = CGPoint(x: CGFloat(rectangle.center.x - rectangle.size.width / 2), y: CGFloat(rectangle.center.y - rectangle.size.height / 2))
-        let size = CGSize(width: CGFloat(rectangle.size.width), height: CGFloat(rectangle.size.height))
+        guard let view = view else { return .zero }
+        let x = CGFloat(rectangle.center.xPercentage) * view.bounds.width
+        let y = CGFloat(rectangle.center.yPercentage) * view.bounds.height
+        let width = CGFloat(rectangle.size.widthPercentage) * view.bounds.width
+        let height = CGFloat(rectangle.size.heightPercentage) * view.bounds.height
+        let origin = CGPoint(x: x - width / 2, y: y - height / 2)
+        let size = CGSize(width: width, height: height)
         return CGRect(origin: origin, size: size)
+    }
+}
+
+
+extension ViewportDataSource: ViewportViewDelegate {
+
+    func viewportView(_ view: ViewportView, didUpdateRectangle center: CGPoint, at index: Int) {
+        let xPercentage = Double(center.x / view.bounds.width)
+        let yPercentage = Double(center.y / view.bounds.height)
+        updateCenter(Position(xPercentage: xPercentage, yPercentage: yPercentage), forRectangleAt: index)
     }
 }

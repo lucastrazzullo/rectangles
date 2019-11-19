@@ -9,6 +9,13 @@
 import Foundation
 
 struct Position: Hashable {
-    let x: Float
-    let y: Float
+
+    let xPercentage: Double
+    let yPercentage: Double
+
+
+    init(xPercentage: Double, yPercentage: Double) {
+        self.xPercentage = xPercentage
+        self.yPercentage = yPercentage
+    }
 }

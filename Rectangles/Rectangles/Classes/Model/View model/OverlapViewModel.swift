@@ -14,7 +14,7 @@ struct OverlapViewModel {
     let area: String?
 
 
-    init(frame: CGRect, area: Float) {
+    init(frame: CGRect, area: Double) {
         self.frame = frame
         self.area = FormatterFactory.measureFormatter.string(from: NSNumber(value: area))
     }

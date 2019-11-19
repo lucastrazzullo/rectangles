@@ -11,9 +11,9 @@ import Foundation
 
 class RectangleBuilder {
 
-    static func buildRectangleWith(x: Float, y: Float, width: Float, height: Float) -> Rectangle? {
-        guard let size = Size(width: width, height: height) else { return nil }
-        let center = Position(x: x, y: y)
+    static func buildRectangleWith(xPercentage: Double, yPercentage: Double, widthPercentage: Double, heightPercentage: Double) -> Rectangle? {
+        guard let size = Size(widthPercentage: widthPercentage, heightPercentage: heightPercentage) else { return nil }
+        let center = Position(xPercentage: xPercentage, yPercentage: yPercentage)
         return Rectangle(center: center, size: size)
     }
 }

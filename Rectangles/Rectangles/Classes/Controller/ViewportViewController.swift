@@ -29,7 +29,6 @@ class ViewportViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewportView.delegate = self
         viewDataSource.view = viewportView
     }
 
@@ -46,13 +45,5 @@ class ViewportViewController: UIViewController {
         repository.getRectangles { [weak self] rectangles in
             self?.viewDataSource.setRectangles(rectangles)
         }
-    }
-}
-
-
-extension ViewportViewController: ViewportViewDelegate {
-
-    func viewportView(_ view: ViewportView, didUpdateRectangle center: CGPoint, at index: Int) {
-        viewDataSource.updateCenter(Position(x: Float(center.x), y: Float(center.y)), forRectangleAt: index)
     }
 }
