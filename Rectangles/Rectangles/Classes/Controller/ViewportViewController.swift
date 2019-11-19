@@ -19,7 +19,7 @@ class ViewportViewController: UIViewController {
     // MARK: Object life cycle
 
     required init?(coder: NSCoder) {
-        repository = RectanglesRepository()
+        repository = FileRectanglesRepository(resource: "Rectangles", type: .json)
         viewDataSource = ViewportDataSource()
         super.init(coder: coder)
     }
@@ -42,7 +42,7 @@ class ViewportViewController: UIViewController {
     // MARK: Private helper methdos
 
     private func fetchRectangles() {
-        repository.getRectangles { [weak self] rectangles in
+        repository.fetchRectangles { [weak self] rectangles in
             self?.viewDataSource.setRectangles(rectangles)
         }
     }

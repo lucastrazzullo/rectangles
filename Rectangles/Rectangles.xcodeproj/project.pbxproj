@@ -20,6 +20,9 @@
 		810572A62382C2E500F49786 /* RectangleOverlapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A52382C2E500F49786 /* RectangleOverlapTests.swift */; };
 		810572A92382C30C00F49786 /* RectangleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572A82382C30C00F49786 /* RectangleBuilder.swift */; };
 		810572AB2382C38C00F49786 /* RectangleAreaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810572AA2382C38C00F49786 /* RectangleAreaTests.swift */; };
+		8120232B23846197001000FC /* FileBackedRectangles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120232A23846197001000FC /* FileBackedRectangles.swift */; };
+		8139653E238459C800B87621 /* AnyRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139653D238459C800B87621 /* AnyRectangle.swift */; };
+		8139654023845F5200B87621 /* FileBackedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139653F23845F5200B87621 /* FileBackedRectangle.swift */; };
 		817D3C5823832A96004BFAA5 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C5723832A96004BFAA5 /* DraggableView.swift */; };
 		817D3C6223834A80004BFAA5 /* RectangleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C6123834A80004BFAA5 /* RectangleViewModel.swift */; };
 		817D3C6423834AA1004BFAA5 /* OverlapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C6323834AA1004BFAA5 /* OverlapViewModel.swift */; };
@@ -27,6 +30,8 @@
 		817D3C682383606A004BFAA5 /* FormatterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C672383606A004BFAA5 /* FormatterFactory.swift */; };
 		817D3C7223840A58004BFAA5 /* RectanglesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C7123840A58004BFAA5 /* RectanglesRepository.swift */; };
 		817D3C7423841E34004BFAA5 /* ViewportDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C7323841E34004BFAA5 /* ViewportDataSource.swift */; };
+		817D3C782384435E004BFAA5 /* Rectangles.json in Resources */ = {isa = PBXBuildFile; fileRef = 817D3C772384435E004BFAA5 /* Rectangles.json */; };
+		817D3C7B23844385004BFAA5 /* FileRectanglesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C7A23844385004BFAA5 /* FileRectanglesRepository.swift */; };
 		81FEEE1F2382EA040084E07A /* ViewportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FEEE1E2382EA040084E07A /* ViewportView.swift */; };
 		81FEEE242382F9720084E07A /* RectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FEEE232382F9720084E07A /* RectangleView.swift */; };
 		81FEEE3723831C820084E07A /* OverlapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FEEE3623831C820084E07A /* OverlapView.swift */; };
@@ -61,6 +66,9 @@
 		810572A52382C2E500F49786 /* RectangleOverlapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleOverlapTests.swift; sourceTree = "<group>"; };
 		810572A82382C30C00F49786 /* RectangleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleBuilder.swift; sourceTree = "<group>"; };
 		810572AA2382C38C00F49786 /* RectangleAreaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleAreaTests.swift; sourceTree = "<group>"; };
+		8120232A23846197001000FC /* FileBackedRectangles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBackedRectangles.swift; sourceTree = "<group>"; };
+		8139653D238459C800B87621 /* AnyRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRectangle.swift; sourceTree = "<group>"; };
+		8139653F23845F5200B87621 /* FileBackedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBackedRectangle.swift; sourceTree = "<group>"; };
 		817D3C5723832A96004BFAA5 /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		817D3C6123834A80004BFAA5 /* RectangleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleViewModel.swift; sourceTree = "<group>"; };
 		817D3C6323834AA1004BFAA5 /* OverlapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapViewModel.swift; sourceTree = "<group>"; };
@@ -68,6 +76,8 @@
 		817D3C672383606A004BFAA5 /* FormatterFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterFactory.swift; sourceTree = "<group>"; };
 		817D3C7123840A58004BFAA5 /* RectanglesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectanglesRepository.swift; sourceTree = "<group>"; };
 		817D3C7323841E34004BFAA5 /* ViewportDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportDataSource.swift; sourceTree = "<group>"; };
+		817D3C772384435E004BFAA5 /* Rectangles.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Rectangles.json; sourceTree = "<group>"; };
+		817D3C7A23844385004BFAA5 /* FileRectanglesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRectanglesRepository.swift; sourceTree = "<group>"; };
 		81FEEE1E2382EA040084E07A /* ViewportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportView.swift; sourceTree = "<group>"; };
 		81FEEE232382F9720084E07A /* RectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleView.swift; sourceTree = "<group>"; };
 		81FEEE3623831C820084E07A /* OverlapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapView.swift; sourceTree = "<group>"; };
@@ -135,6 +145,7 @@
 		81057289238296DB00F49786 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				817D3C7623844346004BFAA5 /* File */,
 				81FEEE3823831D350084E07A /* Xib */,
 				8105728A238296E200F49786 /* Storyboard */,
 				8105727D238296CC00F49786 /* Assets.xcassets */,
@@ -157,6 +168,9 @@
 				8105728F238297A600F49786 /* Size.swift */,
 				810572A12382990700F49786 /* Position.swift */,
 				8105729F238298F400F49786 /* Rectangle.swift */,
+				8139653D238459C800B87621 /* AnyRectangle.swift */,
+				8139653F23845F5200B87621 /* FileBackedRectangle.swift */,
+				8120232A23846197001000FC /* FileBackedRectangles.swift */,
 			);
 			path = "Domain model";
 			sourceTree = "<group>";
@@ -194,8 +208,8 @@
 			children = (
 				8105728C2382972D00F49786 /* Domain model */,
 				817D3C752384421B004BFAA5 /* View model */,
+				817D3C7923844374004BFAA5 /* Repository */,
 				817D3C672383606A004BFAA5 /* FormatterFactory.swift */,
-				817D3C7123840A58004BFAA5 /* RectanglesRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,6 +221,23 @@
 				817D3C6323834AA1004BFAA5 /* OverlapViewModel.swift */,
 			);
 			path = "View model";
+			sourceTree = "<group>";
+		};
+		817D3C7623844346004BFAA5 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				817D3C772384435E004BFAA5 /* Rectangles.json */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		817D3C7923844374004BFAA5 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				817D3C7123840A58004BFAA5 /* RectanglesRepository.swift */,
+				817D3C7A23844385004BFAA5 /* FileRectanglesRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		81FEEE1D2382E9F90084E07A /* Controller */ = {
@@ -322,6 +353,7 @@
 				817D3C6623834B94004BFAA5 /* RectangleView.xib in Resources */,
 				81FEEE3A23831D470084E07A /* OverlapView.xib in Resources */,
 				81057281238296CC00F49786 /* LaunchScreen.storyboard in Resources */,
+				817D3C782384435E004BFAA5 /* Rectangles.json in Resources */,
 				8105727E238296CC00F49786 /* Assets.xcassets in Resources */,
 				8105727C238296CB00F49786 /* Main.storyboard in Resources */,
 			);
@@ -342,10 +374,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				81FEEE3723831C820084E07A /* OverlapView.swift in Sources */,
+				817D3C7B23844385004BFAA5 /* FileRectanglesRepository.swift in Sources */,
 				81FEEE1F2382EA040084E07A /* ViewportView.swift in Sources */,
 				810572A22382990700F49786 /* Position.swift in Sources */,
 				817D3C6223834A80004BFAA5 /* RectangleViewModel.swift in Sources */,
 				81057279238296CB00F49786 /* ViewportViewController.swift in Sources */,
+				8120232B23846197001000FC /* FileBackedRectangles.swift in Sources */,
 				81FEEE242382F9720084E07A /* RectangleView.swift in Sources */,
 				817D3C5823832A96004BFAA5 /* DraggableView.swift in Sources */,
 				817D3C682383606A004BFAA5 /* FormatterFactory.swift in Sources */,
@@ -354,6 +388,8 @@
 				81057290238297A600F49786 /* Size.swift in Sources */,
 				810572A0238298F400F49786 /* Rectangle.swift in Sources */,
 				817D3C7223840A58004BFAA5 /* RectanglesRepository.swift in Sources */,
+				8139653E238459C800B87621 /* AnyRectangle.swift in Sources */,
+				8139654023845F5200B87621 /* FileBackedRectangle.swift in Sources */,
 				81057275238296CB00F49786 /* AppDelegate.swift in Sources */,
 				81057277238296CB00F49786 /* SceneDelegate.swift in Sources */,
 			);

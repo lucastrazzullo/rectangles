@@ -17,15 +17,15 @@ class ViewportDataSource {
         }
     }
 
-    private var rectangles: [Rectangle] = []
-    private var overlaps: [Rectangle] = []
+    private var rectangles: [AnyRectangle] = []
+    private var overlaps: [AnyRectangle] = []
 
 
     // MARK: Public methods
 
-    func setRectangles(_ list: [Rectangle]) {
+    func setRectangles(_ list: [AnyRectangle]) {
         rectangles = list
-        overlaps = Array(rectangles.reduce(Set<Rectangle>(), { [weak self] overlaps, rectangle in
+        overlaps = Array(rectangles.reduce(Set<AnyRectangle>(), { [weak self] overlaps, rectangle in
             if let overlapsForRectangle = self?.overlaps(for: rectangle) {
                 return overlaps.union(Set(overlapsForRectangle))
             } else {
@@ -49,10 +49,10 @@ class ViewportDataSource {
 
     // MARK: Private helper methods
 
-    private func overlaps(for rectangle: Rectangle) -> [Rectangle] {
+    private func overlaps(for rectangle: AnyRectangle) -> [AnyRectangle] {
         return rectangles.compactMap { checkingRectangle in
             if checkingRectangle != rectangle, let overlappedRectangle = checkingRectangle.overlapped(with: rectangle) {
-                return overlappedRectangle
+                return AnyRectangle(overlappedRectangle)
             } else {
                 return nil
             }

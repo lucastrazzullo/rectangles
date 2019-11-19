@@ -8,13 +8,14 @@
 
 import Foundation
 
-struct Rectangle: Hashable {
+protocol Rectangle {
+    var center: Position { get set }
+    var size: Size { get }
+    init(center: Position, size: Size)
+}
 
-    var center: Position
-    let size: Size
 
-
-    // MARK: Public getters
+extension Rectangle {
 
     func area(withViewport width: Double, height: Double) -> Double {
         return size.widthPercentage * width * size.heightPercentage * height
@@ -22,7 +23,7 @@ struct Rectangle: Hashable {
 
 
     func overlapped(with rectangle: Rectangle) -> Rectangle? {
-        return Rectangle.withOverlapBetween(rectangle1: self, rectangle2: rectangle)
+        return Self.withOverlapBetween(rectangle1: self, rectangle2: rectangle)
     }
 
 
@@ -40,7 +41,7 @@ struct Rectangle: Hashable {
 
         let center = Position(xPercentage: minimumX + width / 2, yPercentage: minimumY + height / 2)
         if let size = Size(widthPercentage: width, heightPercentage: height) {
-            return Rectangle(center: center, size: size)
+            return Self(center: center, size: size)
         } else {
             return nil
         }
