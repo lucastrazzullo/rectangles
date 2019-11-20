@@ -24,6 +24,7 @@ class OverlapView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = UIColor.systemTeal.withAlphaComponent(0.75)
+        accessibilityIdentifier = "overlap"
     }
 
 

@@ -25,6 +25,7 @@ class RectangleView: DraggableView {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = UIColor.systemPink
+        accessibilityIdentifier = "rectangle"
     }
 
 

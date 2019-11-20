@@ -25,6 +25,12 @@
 		8120232F2384741B001000FC /* PositionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120232E2384741B001000FC /* PositionsRepository.swift */; };
 		8120233323849B93001000FC /* AnyPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120233223849B93001000FC /* AnyPosition.swift */; };
 		8120233523849E76001000FC /* CacheBackedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120233423849E76001000FC /* CacheBackedPosition.swift */; };
+		8120233F2384AF8B001000FC /* ViewportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120233E2384AF8B001000FC /* ViewportTests.swift */; };
+		8120234723854CE2001000FC /* ApplicationRepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120234623854CE2001000FC /* ApplicationRepositoryFactory.swift */; };
+		8120234923854D1F001000FC /* AutomatedTestsRectanglesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120234823854D1F001000FC /* AutomatedTestsRectanglesRepository.swift */; };
+		8120234B2385522F001000FC /* AutomatedTestsBackedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120234A2385522F001000FC /* AutomatedTestsBackedRectangle.swift */; };
+		8120234D238553D1001000FC /* AutomatedTestsPositionsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120234C238553D1001000FC /* AutomatedTestsPositionsRepository.swift */; };
+		8120234F2385545B001000FC /* AutomatedTestsBackedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8120234E2385545B001000FC /* AutomatedTestsBackedPosition.swift */; };
 		8139653E238459C800B87621 /* AnyRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139653D238459C800B87621 /* AnyRectangle.swift */; };
 		8139654023845F5200B87621 /* FileBackedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8139653F23845F5200B87621 /* FileBackedRectangle.swift */; };
 		817D3C5823832A96004BFAA5 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D3C5723832A96004BFAA5 /* DraggableView.swift */; };
@@ -44,6 +50,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		8105729A238297FF00F49786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81057269238296CB00F49786 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 81057270238296CB00F49786;
+			remoteInfo = Rectangles;
+		};
+		812023412384AF8B001000FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 81057269238296CB00F49786 /* Project object */;
 			proxyType = 1;
@@ -75,6 +88,14 @@
 		8120232E2384741B001000FC /* PositionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionsRepository.swift; sourceTree = "<group>"; };
 		8120233223849B93001000FC /* AnyPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyPosition.swift; sourceTree = "<group>"; };
 		8120233423849E76001000FC /* CacheBackedPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheBackedPosition.swift; sourceTree = "<group>"; };
+		8120233C2384AF8A001000FC /* Rectangles UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rectangles UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8120233E2384AF8B001000FC /* ViewportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewportTests.swift; sourceTree = "<group>"; };
+		812023402384AF8B001000FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8120234623854CE2001000FC /* ApplicationRepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationRepositoryFactory.swift; sourceTree = "<group>"; };
+		8120234823854D1F001000FC /* AutomatedTestsRectanglesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedTestsRectanglesRepository.swift; sourceTree = "<group>"; };
+		8120234A2385522F001000FC /* AutomatedTestsBackedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedTestsBackedRectangle.swift; sourceTree = "<group>"; };
+		8120234C238553D1001000FC /* AutomatedTestsPositionsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedTestsPositionsRepository.swift; sourceTree = "<group>"; };
+		8120234E2385545B001000FC /* AutomatedTestsBackedPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatedTestsBackedPosition.swift; sourceTree = "<group>"; };
 		8139653D238459C800B87621 /* AnyRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyRectangle.swift; sourceTree = "<group>"; };
 		8139653F23845F5200B87621 /* FileBackedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBackedRectangle.swift; sourceTree = "<group>"; };
 		817D3C5723832A96004BFAA5 /* DraggableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
@@ -107,6 +128,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		812023392384AF8A001000FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,6 +143,7 @@
 			children = (
 				81057273238296CB00F49786 /* Rectangles */,
 				81057296238297FF00F49786 /* Rectangles Tests */,
+				8120233D2384AF8B001000FC /* Rectangles UI Tests */,
 				81057272238296CB00F49786 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +153,7 @@
 			children = (
 				81057271238296CB00F49786 /* Rectangles.app */,
 				81057295238297FF00F49786 /* Rectangles Tests.xctest */,
+				8120233C2384AF8A001000FC /* Rectangles UI Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +173,7 @@
 			children = (
 				81057274238296CB00F49786 /* AppDelegate.swift */,
 				81057276238296CB00F49786 /* SceneDelegate.swift */,
+				8120234623854CE2001000FC /* ApplicationRepositoryFactory.swift */,
 				817D3C6023834A2E004BFAA5 /* Model */,
 				81FEEE202382EA070084E07A /* View */,
 				81FEEE1D2382E9F90084E07A /* Controller */,
@@ -181,6 +212,8 @@
 				8139653F23845F5200B87621 /* FileBackedRectangle.swift */,
 				8120232A23846197001000FC /* FileBackedRectangles.swift */,
 				8120233423849E76001000FC /* CacheBackedPosition.swift */,
+				8120234A2385522F001000FC /* AutomatedTestsBackedRectangle.swift */,
+				8120234E2385545B001000FC /* AutomatedTestsBackedPosition.swift */,
 			);
 			path = "Domain model";
 			sourceTree = "<group>";
@@ -211,6 +244,15 @@
 				810572A52382C2E500F49786 /* RectangleOverlapTests.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		8120233D2384AF8B001000FC /* Rectangles UI Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8120233E2384AF8B001000FC /* ViewportTests.swift */,
+				812023402384AF8B001000FC /* Info.plist */,
+			);
+			path = "Rectangles UI Tests";
 			sourceTree = "<group>";
 		};
 		817D3C6023834A2E004BFAA5 /* Model */ = {
@@ -248,6 +290,8 @@
 				8120232E2384741B001000FC /* PositionsRepository.swift */,
 				817D3C7A23844385004BFAA5 /* FileRectanglesRepository.swift */,
 				8120232C23847068001000FC /* CacheRectanglesRepository.swift */,
+				8120234823854D1F001000FC /* AutomatedTestsRectanglesRepository.swift */,
+				8120234C238553D1001000FC /* AutomatedTestsPositionsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -319,6 +363,24 @@
 			productReference = 81057295238297FF00F49786 /* Rectangles Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8120233B2384AF8A001000FC /* Rectangles UI Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 812023432384AF8B001000FC /* Build configuration list for PBXNativeTarget "Rectangles UI Tests" */;
+			buildPhases = (
+				812023382384AF8A001000FC /* Sources */,
+				812023392384AF8A001000FC /* Frameworks */,
+				8120233A2384AF8A001000FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				812023422384AF8B001000FC /* PBXTargetDependency */,
+			);
+			name = "Rectangles UI Tests";
+			productName = "Rectangles UI Tests";
+			productReference = 8120233C2384AF8A001000FC /* Rectangles UI Tests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -333,6 +395,10 @@
 						CreatedOnToolsVersion = 11.2.1;
 					};
 					81057294238297FF00F49786 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 81057270238296CB00F49786;
+					};
+					8120233B2384AF8A001000FC = {
 						CreatedOnToolsVersion = 11.2.1;
 						TestTargetID = 81057270238296CB00F49786;
 					};
@@ -353,6 +419,7 @@
 			targets = (
 				81057270238296CB00F49786 /* Rectangles */,
 				81057294238297FF00F49786 /* Rectangles Tests */,
+				8120233B2384AF8A001000FC /* Rectangles UI Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -378,6 +445,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8120233A2384AF8A001000FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -390,19 +464,24 @@
 				81FEEE1F2382EA040084E07A /* ViewportView.swift in Sources */,
 				810572A22382990700F49786 /* Position.swift in Sources */,
 				8120233523849E76001000FC /* CacheBackedPosition.swift in Sources */,
+				8120234723854CE2001000FC /* ApplicationRepositoryFactory.swift in Sources */,
 				817D3C6223834A80004BFAA5 /* RectangleViewModel.swift in Sources */,
+				8120234D238553D1001000FC /* AutomatedTestsPositionsRepository.swift in Sources */,
 				81057279238296CB00F49786 /* ViewportViewController.swift in Sources */,
+				8120234B2385522F001000FC /* AutomatedTestsBackedRectangle.swift in Sources */,
 				8120232B23846197001000FC /* FileBackedRectangles.swift in Sources */,
 				8120233323849B93001000FC /* AnyPosition.swift in Sources */,
 				81FEEE242382F9720084E07A /* RectangleView.swift in Sources */,
 				817D3C5823832A96004BFAA5 /* DraggableView.swift in Sources */,
 				817D3C682383606A004BFAA5 /* FormatterFactory.swift in Sources */,
+				8120234F2385545B001000FC /* AutomatedTestsBackedPosition.swift in Sources */,
 				8120232D23847068001000FC /* CacheRectanglesRepository.swift in Sources */,
 				817D3C7423841E34004BFAA5 /* ViewportDataSource.swift in Sources */,
 				817D3C6423834AA1004BFAA5 /* OverlapViewModel.swift in Sources */,
 				8120232F2384741B001000FC /* PositionsRepository.swift in Sources */,
 				81057290238297A600F49786 /* Size.swift in Sources */,
 				810572A0238298F400F49786 /* Rectangle.swift in Sources */,
+				8120234923854D1F001000FC /* AutomatedTestsRectanglesRepository.swift in Sources */,
 				817D3C7223840A58004BFAA5 /* RectanglesRepository.swift in Sources */,
 				8139653E238459C800B87621 /* AnyRectangle.swift in Sources */,
 				8139654023845F5200B87621 /* FileBackedRectangle.swift in Sources */,
@@ -422,6 +501,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		812023382384AF8A001000FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8120233F2384AF8B001000FC /* ViewportTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -429,6 +516,11 @@
 			isa = PBXTargetDependency;
 			target = 81057270238296CB00F49786 /* Rectangles */;
 			targetProxy = 8105729A238297FF00F49786 /* PBXContainerItemProxy */;
+		};
+		812023422384AF8B001000FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 81057270238296CB00F49786 /* Rectangles */;
+			targetProxy = 812023412384AF8B001000FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -642,6 +734,44 @@
 			};
 			name = Release;
 		};
+		812023442384AF8B001000FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UC9U5RZ8UF;
+				INFOPLIST_FILE = "Rectangles UI Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucastrazzullo.Rectangles-UI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Rectangles;
+			};
+			name = Debug;
+		};
+		812023452384AF8B001000FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UC9U5RZ8UF;
+				INFOPLIST_FILE = "Rectangles UI Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lucastrazzullo.Rectangles-UI-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Rectangles;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -668,6 +798,15 @@
 			buildConfigurations = (
 				8105729D238297FF00F49786 /* Debug */,
 				8105729E238297FF00F49786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		812023432384AF8B001000FC /* Build configuration list for PBXNativeTarget "Rectangles UI Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				812023442384AF8B001000FC /* Debug */,
+				812023452384AF8B001000FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -22,8 +22,8 @@ class ViewportViewController: UIViewController {
     // MARK: Object life cycle
 
     required init?(coder: NSCoder) {
-        rectanglesRepository = FileRectanglesRepository(resource: "Rectangles", type: .json)
-        positionsRepository = CachePositionsRepository()
+        rectanglesRepository = ApplicationRepositoryFactory.shared.makeRectanglesRepository()
+        positionsRepository = ApplicationRepositoryFactory.shared.makePositionsRepository()
         viewDataSource = ViewportDataSource()
         super.init(coder: coder)
     }
@@ -59,12 +59,20 @@ class ViewportViewController: UIViewController {
         repositoryStream?.cancel()
         repositoryStream = Publishers.CombineLatest(rectanglesPublisher, positionsPublisher).eraseToAnyPublisher().sink {
             [weak self] rectangles, positions in
-            var rectangles = rectangles
-            positions.enumerated().forEach({ index, position in
-                rectangles[index].center = position
-            })
-            self?.viewDataSource.setRectangles(rectangles)
+            if let rectangles = self?.apply(positions: positions, to: rectangles) {
+                self?.viewDataSource.setRectangles(rectangles)
+            }
         }
+    }
+
+
+    private func apply(positions: [Position], to rectangles: [AnyRectangle]) -> [AnyRectangle] {
+        guard positions.count == rectangles.count else { return rectangles }
+        var rectangles = rectangles
+        positions.enumerated().forEach({ index, position in
+            rectangles[index].center = position
+        })
+        return rectangles
     }
 }
 
