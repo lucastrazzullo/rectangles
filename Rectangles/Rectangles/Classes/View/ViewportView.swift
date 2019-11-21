@@ -38,6 +38,12 @@ class ViewportView: UIView {
 
     // MARK: Public methods
 
+    func reloadData() {
+        reloadRectangles()
+        reloadOverlaps()
+    }
+
+
     func reloadRectangles() {
         rectangleViewsContainer.subviews.forEach({ $0.removeFromSuperview() })
         rectangleIndexes = [:]
@@ -64,6 +70,12 @@ class ViewportView: UIView {
                 }
             }
         }
+    }
+
+
+    func removeData() {
+        rectangleViewsContainer.subviews.forEach({ $0.removeFromSuperview() })
+        overlapViewsContainer.subviews.forEach({ $0.removeFromSuperview() })
     }
 }
 

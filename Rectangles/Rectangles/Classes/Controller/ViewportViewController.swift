@@ -50,6 +50,15 @@ class ViewportViewController: UIViewController {
     }
 
 
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        viewportView.removeData()
+        coordinator.animate(alongsideTransition: nil, completion: { [weak self] _ in
+            self?.viewportView.reloadData()
+        })
+    }
+
+
     // MARK: Private helper methdos
 
     private func fetchRectangles() {
